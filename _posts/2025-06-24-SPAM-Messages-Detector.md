@@ -4,9 +4,7 @@ title: "SPAM Messages Detector Using Logistic Regression and Naive Bayes Model"
 date: 2025-06-24
 ---
 
-![WAYS-TO-STOP-SMS-SPAM-ON-iPhone-Android-HERES-HOW-1](imangelinak.github.io/_site/assets/img/favicons/WAYS-TO-STOP-SMS-SPAM-ON-iPhone-Android-HERES-HOW-1.jpg){: width="700"}**
-
-**Hello Angelina here,
+Hello Angelina here,
 
 <br> This past week I've been working on a project that is detecting spam messages through big data. This project I created using ***VScode***, using ***Python 3.13.2*** on a ***Jupyter Notebook*** for visualizing the data graphs. I've used the ***Logistic Regression Algorithm*** to detect the difference in the messages. The messages are named as *SPAM* for the spam messages and *HAM* for the unidentified, not spam or missing data messages. 
 In the next few (or maybe a little more lines) I will explain the project as a whole in details, just so I can report and present the project better.
