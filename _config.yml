@@ -170,6 +170,15 @@ collections:
   tabs:
     output: true
     sort_by: order
+  posts:
+    output: true
+    sort_by: order
+  Data Science Projects:
+    output: true
+    sort_by: order
+  IT News:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
