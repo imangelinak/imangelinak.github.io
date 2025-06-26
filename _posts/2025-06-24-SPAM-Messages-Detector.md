@@ -87,11 +87,11 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 <div id="comments">
   <h2>Comments</h2>
   <script src="https://utteranc.es/client.js"
-          repo="imangelinak/imangelinak.github.io"
-          issue-term="pathname"
-          label="💬 comment"
-          theme="preferred-color-scheme"
-          crossorigin="anonymous"
-          async>
-  </script>
+        repo="imangelinak/imangelinak.github.io"
+        issue-term="pathname"
+        label="💬 comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
 </div>
