@@ -3,6 +3,7 @@ layout: post
 title: "SPAM Messages Detector Using Logistic Regression and Naive Bayes Model"
 date: 2025-06-24
 ---
+![Spam Messages](/Users/angelina/imangelinak.github.io/_site/assets/img/favicons/WAYS-TO-STOP-SMS-SPAM-ON-iPhone-Android-HERES-HOW-1.jpg)
 
 Hello 👋🏾, Angelina here!
 
