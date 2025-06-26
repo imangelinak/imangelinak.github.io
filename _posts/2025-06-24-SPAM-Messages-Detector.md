@@ -83,3 +83,15 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 
 #### ***Till Next Time!*** #
 *Angelina Katrandhzhiyska*
+
+<div id="comments">
+  <h2>Comments</h2>
+  <script src="https://utteranc.es/client.js"
+          repo="imangelinak/imangelinak.github.io"
+          issue-term="pathname"
+          label="💬 comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
