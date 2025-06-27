@@ -82,7 +82,7 @@ The project involves a Machine Learning algorithm which is the Logistic Regressi
 Link to the coding of this project: https://github.com/imangelinak/messages_spam_detector 
 
 #### ***Till Next Time!*** #
-*Angelina Katrandhzhiyska*
+*Angelina Katrandzhiyska*
 
 <div id="comments">
   <h2>Comments</h2>
