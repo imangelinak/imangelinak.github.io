@@ -90,7 +90,8 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
         repo="imangelinak/imangelinak.github.io"
         issue-term="pathname"
         label="💬 comment"
-        theme="light|dark"
+        theme="github-light"  <!-- or -->
+        theme="github-dark"
         crossorigin="anonymous"
         async>
 </script>
