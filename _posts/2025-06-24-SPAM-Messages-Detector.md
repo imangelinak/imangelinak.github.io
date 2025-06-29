@@ -94,7 +94,7 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="light # light | dark"
+        data-theme="dark # light/dark"
         data-lang="en"
         crossorigin="anonymous"
         async>
