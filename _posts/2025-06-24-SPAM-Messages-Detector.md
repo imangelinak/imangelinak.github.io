@@ -84,14 +84,19 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 #### ***Till Next Time!*** #
 *Angelina Katrandzhiyska*
 
-<div id="comments">
-  <h2>Comments</h2>
-  <script src="https://utteranc.es/client.js"
-        repo="imangelinak/imangelinak.github.io"
-        issue-term="pathname"
-        label="💬 comment"
-        theme= "preferred-color-scheme"
+<script src="https://giscus.app/client.js"
+        data-repo="imangelinak/imangelinak.github.io"
+        data-repo-id="R_kgDOPAvy_w"
+        data-category="General"
+        data-category-id="DIC_kwDOPAvy_84CsLxA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
         crossorigin="anonymous"
         async>
 </script>
-</div>
+
