@@ -83,7 +83,7 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 
 #### ***Till Next Time!*** #
 *Angelina Katrandzhiyska*
-
+<div id="giscus-comments></div>
 <script src="https://giscus.app/client.js"
         data-repo="imangelinak/imangelinak.github.io"
         data-repo-id="R_kgDOPAvy_w"
@@ -93,7 +93,7 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
-        data-input-position="top"
+        data-input-position="bottom"
         data-theme="preffered-color-scheme"
         data-lang="en"
         crossorigin="anonymous"
