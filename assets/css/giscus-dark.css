@@ -40,7 +40,7 @@
     container.appendChild(script);
   }
 
-  const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const initialTheme = document.documentElement.getAttribute('data-theme') || 'dark';
   loadGiscus(initialTheme);
 
   const observer = new MutationObserver(() => {
