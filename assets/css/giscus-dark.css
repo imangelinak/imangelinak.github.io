@@ -12,3 +12,41 @@
   --color-header-bg: #111;
   --color-input-bg: #1a1a1a;
 }
+
+<script>
+  function loadGiscus(theme) {
+    const container = document.getElementById('giscus-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'imangelinak/imangelinak.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDOPAvy_w');
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDOPAvy_84CsL');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+
+    const darkTheme = '/assets/css/giscus-dark.css';
+    script.setAttribute('data-theme', theme === 'dark' ? darkTheme : 'light');
+
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('async', '');
+    container.appendChild(script);
+  }
+
+  const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  loadGiscus(initialTheme);
+
+  const observer = new MutationObserver(() => {
+    const newTheme = document.documentElement.getAttribute('data-theme');
+    loadGiscus(newTheme);
+  });
+
+  observer.observe(document.documentElement, { attributes: true });
+</script>
