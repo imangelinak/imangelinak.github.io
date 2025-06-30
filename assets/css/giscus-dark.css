@@ -33,7 +33,7 @@
     script.setAttribute('data-input-position', 'bottom');
 
     const darkTheme = '/assets/css/giscus-dark.css';
-    script.setAttribute('data-theme', theme === 'dark' ? darkTheme : 'dark');
+    script.setAttribute('data-theme', theme === 'dark' ? darkTheme : 'light');
 
     script.setAttribute('crossorigin', 'anonymous');
     script.setAttribute('async', '');
