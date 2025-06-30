@@ -31,7 +31,6 @@ const customDarkThemeURL = '{{ site.baseurl }}/assets/css/giscus-dark.css';
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
 
-    // 👇 Use baseurl so the path works no matter where the site is hosted
     const darkTheme = '{{ site.baseurl }}/assets/css/giscus-dark.css';
     script.setAttribute('data-theme', theme === 'dark' ? darkTheme : 'light');
 
