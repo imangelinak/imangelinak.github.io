@@ -2,8 +2,13 @@
   --color-bg-primary: #0a0a0a;
   --color-text-primary: #ffffff;
   --color-border-default: #ffffff;
-  --color-btn-bg: #669c2c;
+
+  --color-btn-bg: #0366d6;
   --color-btn-text: #ffffff;
-  --color-accent: #ffffff;
-  --color-header-bg: #000000;
+
+  --color-accent: #58a6ff;
+  --color-accent-hover: #79c0ff;
+
+  --color-header-bg: #111;
+  --color-input-bg: #1a1a1a;
 }
