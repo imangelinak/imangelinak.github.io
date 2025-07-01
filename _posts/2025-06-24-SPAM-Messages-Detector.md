@@ -84,16 +84,24 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 #### ***Till Next Time!*** #
 *Angelina Katrandzhiyska*
 
-<script
-  src="https://utteranc.es/client.js"
-  repo="imangelinak/imangelinak.github.io"
-  issue-term="pathname"
-  theme="github-light | github-black"
-  crossorigin="anonymous"
-  async
-></script>
-
-
+ <div id="light-mode">
+            <script src="https://utteranc.es/client.js"
+                repo="imangelinak/imangelinak.github.io"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </div>
+        <div id="dark-mode">
+            <script src="https://utteranc.es/client.js"
+                repo="imangelinak/imangelinak.github.io"
+                issue-term="pathname"
+                theme="github-dark"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </div>
 
 
 
