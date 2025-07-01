@@ -86,8 +86,3 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 
 {% include giscus.html %}
 
-
-<script>
-  // Reload the page after 5 seconds
-  setTimeout(() => location.reload(), 5000);
-</script>
