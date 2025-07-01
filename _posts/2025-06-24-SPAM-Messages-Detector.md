@@ -84,30 +84,15 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 #### ***Till Next Time!*** #
 *Angelina Katrandzhiyska*
 
-<script>
-  function setUtterancesTheme(theme) {
-    const iframe = document.querySelector('iframe.utterances-frame');
-    if (!iframe) return;
-
-    const message = {
-      type: 'set-theme',
-      theme: theme === 'dark' 
-        ? 'github-dark' 
-        : 'github-light'
-    };
-
-    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-  }
-
-  document.querySelector('#theme-toggle').addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-
-    // Update utterances theme
-    setUtterancesTheme(newTheme);
-  });
+<script src="https://utteranc.es/client.js"
+        repo="imangelinak/imangelinak.github.io"
+        issue-term="pathname"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
 </script>
+
+
 
 
 
