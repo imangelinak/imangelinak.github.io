@@ -103,22 +103,6 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
                 async>
             </script>
         </div>
-<style>
-html[data-theme="dark"] #utterances-light {
-    display: none;
-}
-html[data-theme="dark"] #utterances-dark {
-    display: block;
-}
-html #utterances-light,
-html[data-theme="light"] #utterances-light {
-    display: block;
-}
-html #utterances-dark,
-html[data-theme="light"] #utterances-dark {
-    display: none;
-}
-</style>
 
 
 
