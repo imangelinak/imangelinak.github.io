@@ -85,12 +85,13 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 *Angelina Katrandzhiyska*
 
 <script src="https://utteranc.es/client.js"
-        repo="imangelinak/imangelinak.github.io"
+        repo="yourusername/your-repo"
         issue-term="pathname"
-        theme="light"
+        theme="github-light"
         crossorigin="anonymous"
         async>
 </script>
+
 
 
 
