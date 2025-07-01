@@ -35,7 +35,7 @@ layout: home
 
   document.querySelector('#theme-toggle').addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'dark' : 'light';
+    const utterancesTheme = theme === 'dark' ? 'github-dark' : 'github-light';
     document.documentElement.setAttribute('data-theme', newTheme);
 
     // Update utterances theme
