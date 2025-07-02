@@ -11,40 +11,12 @@ layout: home
 <body>
   <h1>Hello from GitHub Pages</h1>
 
-  <button onclick="location.reload()">Refresh Page</button>
-
-  <script>
-    // Auto-refresh after 10 seconds
-    setTimeout(() => location.reload(), 10000);
-  </script>
-
-<script>
-  function setUtterancesTheme(theme) {
-    const iframe = document.querySelector('iframe.utterances-frame');
-    if (!iframe) return;
-
-    const message = {
-      type: 'set-theme',
-      theme: theme === 'dark' ? 'github-dark' : 'github-light'
-    };
-
-    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-  }
-
-  document.querySelector('#theme-toggle').addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const utterancesTheme = theme === 'dark' ? 'github-dark' : 'github-light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-
-    // Update utterances theme
-    setUtterancesTheme(newTheme);
-  });
-</script>
 
 <style>
 </style>
 <!-- Your toggle button -->
-<button id="theme-toggle">Toggle Theme</button>
+<button id="theme-toggle" aria-label="Toggle dark and light theme">Toggle Theme</button>
+
 
 <!-- Your comment section -->
 <div id="comments"></div>
@@ -87,7 +59,5 @@ layout: home
     loadUtterances(newTheme); // ← reload the widget with new theme
   });
 </script>
-
-
 </body>
 </html>
