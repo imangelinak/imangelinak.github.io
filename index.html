@@ -43,45 +43,51 @@ layout: home
 
 <style>
 </style>
-    <section>
-      <div id="light-mode">
-        <script src="https://utteranc.es/client.js"
-          repo="imangelinak/imangelinak.github.io"
-          issue-term="title"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </div>
+<!-- Your toggle button -->
+<button id="theme-toggle">Toggle Theme</button>
 
-      <div id="dark-mode">
-        <script src="https://utteranc.es/client.js"
-          repo="imangelinak/imangelinak.github.io"
-          issue-term="title"
-          theme="github-dark"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </div>
+<!-- Your comment section -->
+<div id="comments"></div>
 
-      <script>
-        var uttLight = document.getElementById("light-mode");
-        var uttDark = document.getElementById("dark-mode");
+<script>
+  function loadUtterances(theme) {
+    const container = document.getElementById('comments');
+    if (!container) return;
 
-        let initTheme = "light";
-        const htmlTheme = document.documentElement.getAttribute("data-theme");
-        if ($("html[mode=dark]").length > 0
-          || ($("html[mode]").length == 0
-            && window.matchMedia("(prefers-color-scheme: dark)").matches ) ) {
-          initTheme = "dark";
-        }
+    // Clear any existing Utterances iframe
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
 
-        if(initTheme === "dark"){
-          uttLight.parentNode.removeChild(uttLight);
-        } else {
-          uttDark.parentNode.removeChild(uttDark);
-        }
-      </script>
-    </section>
+    // Create and insert a new script with the correct theme
+    const script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // ← replace this
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+    container.appendChild(script);
+  }
+
+  // Set initial theme on page load
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  loadUtterances(initialTheme);
+
+  // Handle toggle
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    loadUtterances(newTheme); // ← reload the widget with new theme
+  });
+</script>
+
+
 </body>
 </html>
