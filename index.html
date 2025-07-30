@@ -36,6 +36,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 
 // Toggle button handler
 document.getElementById('theme-toggle')?.addEventListener('click', () => {
+  <button id="theme-toggle">Toggle Theme</button>
   currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(currentTheme);
 });
