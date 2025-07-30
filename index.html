@@ -1,66 +1,54 @@
----
-layout: home
----
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>My Site</title>
-   <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
 
   <h1>Hello from GitHub Pages</h1>
-  
-  <button id="theme-toggle">Toggle Theme</button>
 
   <!-- Comment Section -->
   <div id="utterances-container"></div>
 
-<script>
-  // Track current theme
-  let currentTheme = localStorage.getItem('theme') ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  <script>
+    // Get system preference or saved setting
+    let currentTheme = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
 
-    // Reload Utterances with the correct theme
-    const container = document.getElementById('utterances-container');
-    if (!container) return;
+      const container = document.getElementById('utterances-container');
+      if (!container) return;
 
-    container.innerHTML = ''; // Clear existing iframe
+      container.innerHTML = '';
 
-    const script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // Replace with your repo if needed
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
-    script.setAttribute('crossorigin', 'anonymous');
-    script.async = true;
+      const script = document.createElement('script');
+      script.src = 'https://utteranc.es/client.js';
+      script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // 🔁 Replace with your repo
+      script.setAttribute('issue-term', 'pathname');
+      script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
 
-    container.appendChild(script);
-  }
+      container.appendChild(script);
+    }
 
-  // Initial load
-  applyTheme(currentTheme);
-
-  // React to system preference changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    currentTheme = e.matches ? 'dark' : 'light';
+    // Initial load
     applyTheme(currentTheme);
-  });
 
-  // Toggle button — this syncs both site + Utterances
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(currentTheme);
-  });
-</script>
-
+    // Respond to system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      const newTheme = e.matches ? 'dark' : 'light';
+      currentTheme = newTheme;
+      applyTheme(newTheme);
+    });
+  </script>
 
 </body>
 </html>
+
 
