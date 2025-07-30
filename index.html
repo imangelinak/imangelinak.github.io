@@ -12,35 +12,54 @@ layout: home
 <body>
 
   <h1>Hello from GitHub Pages</h1>
+  
+  <button id="theme-toggle">Toggle Theme</button>
 
   <!-- Comment Section -->
   <div id="utterances-container"></div>
 
-  <script>
-let currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+<script>
+  // Track current theme
+  let currentTheme = localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  loadUtterances(theme);
-}
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
 
-// Initial setup
-applyTheme(currentTheme);
+    // Reload Utterances with the correct theme
+    const container = document.getElementById('utterances-container');
+    if (!container) return;
 
-// Listen for system changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  currentTheme = e.matches ? 'dark' : 'light';
+    container.innerHTML = ''; // Clear existing iframe
+
+    const script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // Replace with your repo if needed
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    container.appendChild(script);
+  }
+
+  // Initial load
   applyTheme(currentTheme);
-});
 
-// Toggle button handler
-document.getElementById('theme-toggle')?.addEventListener('click', () => {
-  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  applyTheme(currentTheme);
-});
+  // React to system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    currentTheme = e.matches ? 'dark' : 'light';
+    applyTheme(currentTheme);
+  });
 
-  </script>
+  // Toggle button — this syncs both site + Utterances
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+  });
+</script>
+
 
 </body>
 </html>
