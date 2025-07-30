@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<article>
+  {{ content }}
+</article>
+
+<hr>
+
+<!-- Theme toggle button -->
+<button id="theme-toggle">Toggle Theme</button>
+
+<!-- Utterances comment section -->
+<div id="utterances-container"></div>
+
+<script>
+  function loadUtterances(theme) {
+    const container = document.getElementById('utterances-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'imangelinak/imangelinak.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    container.appendChild(script);
+  }
+
+  function getInitialTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    loadUtterances(theme);
+  }
+
+  let currentTheme = getInitialTheme();
+  applyTheme(currentTheme);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    applyTheme(e.matches ? 'dark' : 'light');
+  });
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+  });
+</script>

@@ -84,14 +84,4 @@ Link to the coding of this project: https://github.com/imangelinak/messages_spam
 #### ***Till Next Time!*** #
 *Angelina Katrandzhiyska*
 
-<div id="utterances-dark">
-  <script src="https://utteranc.es/client.js"
-          repo="imangelinak/imangelinak.github.io"
-          issue-term="pathname"
-          crossorigin="anonymous"
-          async>
-  </script>
-</div>
-
-
 
