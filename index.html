@@ -1,64 +1,78 @@
 ---
 layout: home
-# Index page
 ---
 
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>My Site</title>
+  <style>
+    /* Optional: style your light/dark theme here */
+    [data-theme="dark"] {
+      background-color: #121212;
+      color: white;
+    }
+    [data-theme="light"] {
+      background-color: white;
+      color: black;
+    }
+  </style>
 </head>
 <body>
+
   <h1>Hello from GitHub Pages</h1>
 
+  <!-- Toggle Button -->
+  <button id="theme-toggle">Toggle Theme</button>
 
-<style>
-</style>
-<!-- Your toggle button -->
-<button id="theme-toggle" aria-label="Toggle dark and light theme">Toggle Theme</button>
+  <!-- Comment Section -->
+  <div id="utterances-container"></div>
 
+  <script>
+    function loadUtterances(theme) {
+      const container = document.getElementById('utterances-container');
+      if (!container) return;
 
-<!-- Your comment section -->
-<div id="comments"></div>
+      container.innerHTML = ''; // Clear existing iframe
 
-<script>
-  function loadUtterances(theme) {
-    const container = document.getElementById('comments');
-    if (!container) return;
+      const script = document.createElement('script');
+      script.src = 'https://utteranc.es/client.js';
+      script.repo = 'imangelinak/imangelinak.github.io';  // 🔁 Make sure this matches your GitHub repo
+      script.setAttribute('issue-term', 'pathname');
+      script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
+      script.crossOrigin = 'anonymous';
+      script.async = true;
 
-    // Clear any existing Utterances iframe
-    while (container.firstChild) {
-      container.removeChild(container.firstChild);
+      container.appendChild(script);
     }
 
-    // Create and insert a new script with the correct theme
-    const script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // ← replace this
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
-    script.crossOrigin = 'anonymous';
-    script.async = true;
-    container.appendChild(script);
-  }
+    // Initial theme: saved or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+    loadUtterances(initialTheme);
 
-  // Set initial theme on page load
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', initialTheme);
-  loadUtterances(initialTheme);
+    // System theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      const newTheme = e.matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      loadUtterances(newTheme);
+    });
 
-  // Handle toggle
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const newTheme = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    loadUtterances(newTheme); // ← reload the widget with new theme
-  });
-</script>
+    // Manual toggle
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      loadUtterances(newTheme);
+    });
+  </script>
 
 </body>
 </html>
+
