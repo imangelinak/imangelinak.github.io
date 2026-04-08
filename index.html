@@ -1,54 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Site</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
-</head>
-<body>
-
-  <h1>Hello from GitHub Pages</h1>
-
-  <!-- Comment Section -->
-  <div id="utterances-container"></div>
-
-  <script>
-    // Get system preference or saved setting
-    let currentTheme = localStorage.getItem('theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-
-      const container = document.getElementById('utterances-container');
-      if (!container) return;
-
-      container.innerHTML = '';
-
-      const script = document.createElement('script');
-      script.src = 'https://utteranc.es/client.js';
-      script.setAttribute('repo', 'imangelinak/imangelinak.github.io'); // 🔁 Replace with your repo
-      script.setAttribute('issue-term', 'pathname');
-      script.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light');
-      script.setAttribute('crossorigin', 'anonymous');
-      script.async = true;
-
-      container.appendChild(script);
-    }
-
-    // Initial load
-    applyTheme(currentTheme);
-
-    // Respond to system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const newTheme = e.matches ? 'dark' : 'light';
-      currentTheme = newTheme;
-      applyTheme(newTheme);
-    });
-  </script>
-
-</body>
-</html>
-
+---
+layout: home
+# Index page
+---
 
