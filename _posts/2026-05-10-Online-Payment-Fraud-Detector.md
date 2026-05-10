@@ -31,13 +31,20 @@ After importing all the libraries, I started inspecting the dataset using `.head
 ### Data Cleanup & Processing 
 
 After reading and understanding the dataset, I started separating the variables into categorical, integer and floating-point variables in order to better understand the data structure and prepare it for the Machine Learning models. The next thing that I wanted to do is visualize the transaction data and identify possible patterns related to fraudulent behavior. Using `Seaborn` and `Matplotlib`, I created several visualizations including: 
-- Count Plot for transaction types 
+- Count Plot for transaction types
+
 ![Transaction Type Count Plot](/assets/img/posts/bar_chart1.png)
+
 - Bar Plot for transaction amounts 
+
 ![Transaction Amount Bar Plot](/assets/img/posts/bar_chart2.png)
+
 - Distribution Graph for transaction steps
+
  ![Distribution of Transaction Steps](/assets/img/posts/distribution_of_step.png)
+
 - Heatmap Correlation Matrix 
+
 ![Correlation Heatmap](/assets/img/posts/heatmap.png)
 
 The `Count Plot` helped me visualize which transaction types are appearing more often in the dataset, while the `Bar Plot` allowed me to compare the average transaction amounts depending on the transaction type. 
@@ -93,6 +100,7 @@ This slightly increased the number of false positives, but improved the fraud de
 ### Precision-Recall Curve 
 
 After optimizing the model, I created a `Precision-Recall Curve` to better visualize the relationship between Precision and Recall. 
+
 ![Precision-Recall Curve](/assets/img/posts/output.png)
 
 The graph showed strong results: 
