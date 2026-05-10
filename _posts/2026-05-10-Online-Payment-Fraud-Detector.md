@@ -31,6 +31,7 @@ After importing all the libraries, I started inspecting the dataset using `.head
 ### Data Cleanup & Processing 
 
 After reading and understanding the dataset, I started separating the variables into categorical, integer and floating-point variables in order to better understand the data structure and prepare it for the Machine Learning models. The next thing that I wanted to do is visualize the transaction data and identify possible patterns related to fraudulent behavior. Using `Seaborn` and `Matplotlib`, I created several visualizations including: 
+
 - Count Plot for transaction types
 
 ![Transaction Type Count Plot](/assets/img/posts/bar_chart1.png)
