@@ -4,7 +4,7 @@ title: "Online Payment Fraud Detection Using Machine Learning"
 date: 2026-05-10 
 --- 
 
-![Online Fraud Detection](//Users/angelina/imangelinak.github.io/assets/img/posts/What-is-Online-Payment-Frauds.jpg) 
+![Online Fraud Detection](/assets/img/posts/What-is-Online-Payment-Frauds.jpg) 
 
 Hello 👋🏾, Angelina here! 
 
@@ -32,7 +32,7 @@ After importing all the libraries, I started inspecting the dataset using `.head
 
 After reading and understanding the dataset, I started separating the variables into categorical, integer and floating-point variables in order to better understand the data structure and prepare it for the Machine Learning models. The next thing that I wanted to do is visualize the transaction data and identify possible patterns related to fraudulent behavior. Using `Seaborn` and `Matplotlib`, I created several visualizations including: 
 - Count Plot for transaction types 
-![Transaction Type Count Plot](//Users/angelina/imangelinak.github.io/assets/img/posts/bar_chart1.png)
+![Transaction Type Count Plot](/assets/img/posts/bar_chart1.png)
 - Bar Plot for transaction amounts 
 ![Transaction Amount Bar Plot](/assets/img/posts/bar_chart2.png)
 - Distribution Graph for transaction steps
